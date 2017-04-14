@@ -223,6 +223,14 @@ docker-compose run --rm import-lakelines
 
 echo " "
 echo "-------------------------------------------------------------------------------------"
+echo "====> : Start importing contours into PostgreSQL "
+echo "      : Source code: https://github.com/macteo/import-contour "
+echo "      : Terms-of-use: TODO: fill "
+echo "      : Thank you: FILL "
+docker-compose run --rm import-contour
+
+echo " "
+echo "-------------------------------------------------------------------------------------"
 echo "====> : Start importing OpenStreetMap data: ./data/${testdata} -> imposm3[./build/mapping.yaml] -> PostgreSQL"
 echo "      : Imposm3 documentation: https://imposm.org/docs/imposm3/latest/index.html "
 echo "      :   Thank you Omniscale! "

@@ -13,3 +13,4 @@ data/*
 
 # generated source files
 build/*
+.DS_Store

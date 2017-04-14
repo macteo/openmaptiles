@@ -105,6 +105,9 @@ import-sql-dev:
 
 import-osm-dev:
 	docker-compose run --rm import-osm /bin/bash
+	
+import-contour-dev:
+	docker-compose run --rm import-contour /bin/bash
 
 download-geofabrik:
 	@echo ===============  download-geofabrik =======================
