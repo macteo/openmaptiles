@@ -8,7 +8,7 @@ layer:
       tertiary roads to residential roads and
       foot paths. Styling the roads is the most essential part of the map.
       The `transportation` layer also contains polygons for features like plazas.
-  buffer_size: 4
+  buffer_size: 8
   srs: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over
   fields:
     class:
@@ -47,6 +47,9 @@ layer:
           Mark with `1` whether way is a ramp (link or steps)
           or not with `0`.
       values: [0, 1]
+    osm_id:
+      description: |
+        The original osm_id
     service:
       description: |
           Original value of the [`service`](http://wiki.openstreetmap.org/wiki/Key:service) tag.
@@ -58,10 +61,20 @@ layer:
       - driveway
       - alley
       - parking_aisle
+    sac_scale:
+      description: |
+        Original value of the [`sac_scale`](http://wiki.openstreetmap.org/wiki/Key:sac_scale) tag.
+      values:
+      - hiking
+      - mountain_hiking
+      - demanding_mountain_hiking
+      - alpine_hiking
+      - demanding_alpine_hiking
+      - difficult_alpine_hiking
   datasource:
     geometry_field: geometry
     srid: 900913
-    query: (SELECT geometry, class, oneway, ramp, brunnel, service FROM layer_transportation(!bbox!, z(!scale_denominator!))) AS t
+    query: (SELECT osm_id, geometry, class, oneway, ramp, brunnel, service, sac_scale FROM layer_transportation(!bbox!, z(!scale_denominator!))) AS t
 schema:
   - ./class.sql
   - ./merge_highways.sql

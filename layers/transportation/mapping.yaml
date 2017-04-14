@@ -92,12 +92,46 @@ tables:
   highway_linestring:
     type: linestring
     fields:
-    - name: osm_id
-      type: id
+    - name: sac_scale
+      type: string
+      key: sac_scale
     - name: geometry
       type: geometry
     - name: highway
       key: highway
+      type: string
+    - name: osm_id
+      type: id
+      key: osm_id
+    - name: trail_visibility
+      key: trail_visibility
+      type: string
+    - name: tracktype
+      key: tracktype
+      type: string
+    - name: mountain_pass
+      key: mountain_pass
+      type: bool
+    - name: incline
+      key: incline
+      type: string
+    - name: bicycle_road
+      key: bicycle_road
+      type: bool
+    - name: surface
+      key: surface
+      type: string
+    - name: mtb_scale
+      key: 'mtb:scale'
+      type: integer
+    - name: mtb_scale_uphill
+      key: 'mtb:scale:uphill'
+      type: integer
+    - name: mtb_scale_imba
+      key: 'mtb:scale:imba'
+      type: integer
+    - name: mtb_description
+      key: 'mtb:description'
       type: string
     - *ref
     - *network
@@ -148,6 +182,7 @@ tables:
     fields:
     - name: osm_id
       type: id
+      key: osm_id
     - name: geometry
       type: geometry
     - key: railway
@@ -186,6 +221,7 @@ tables:
     fields:
     - name: osm_id
       type: id
+      key: osm_id
     - name: geometry
       type: geometry
     - name: highway
@@ -210,6 +246,7 @@ tables:
     columns:
     - name: osm_id
       type: id
+      key: osm_id
     - name: member
       type: member_id
     - name: role

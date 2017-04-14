@@ -5,6 +5,8 @@ tileset:
     - layers/landcover/landcover.yaml
     - layers/landuse/landuse.yaml
     - layers/mountain_peak/mountain_peak.yaml
+    - layers/hiking_poi/hiking_poi.yaml
+    - layers/hiking_trails/hiking_trails.yaml
     - layers/park/park.yaml
     - layers/boundary/boundary.yaml
     - layers/aeroway/aeroway.yaml
@@ -15,6 +17,7 @@ tileset:
     - layers/place/place.yaml
     - layers/housenumber/housenumber.yaml
     - layers/poi/poi.yaml
+    - layers/contour/contour.yaml
   name: OpenMapTiles
   version: 3.3.0
   id: openmaptiles
