@@ -9,11 +9,6 @@ layer:
     srid: 900913
     query: (SELECT osm_id, ele, geometry FROM layer_contour(!bbox!, z(!scale_denominator!))) AS t
   fields:
-    osm_id:
-      description: |
-        The original osm_id
-    ele:
-      description: |
-		 "Elevation in meters"
+    ele: "Elevation in meters"
 schema:
   - ./layer.sql
