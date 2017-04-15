@@ -15,6 +15,7 @@ layer:
       - wood
       - grass
       - wetland
+      - rock
     subclass:
       description: |
           Use **subclass** to do more precise styling.

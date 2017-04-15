@@ -16,6 +16,7 @@ CREATE OR REPLACE FUNCTION landcover_class(landuse VARCHAR, "natural" VARCHAR, l
          WHEN "natural"='wood' OR landuse IN ('forest') THEN 'wood'
          WHEN "natural"='grassland' OR landuse IN ('grass', 'meadow', 'allotments', 'grassland', 'park', 'village_green', 'recreation_ground') OR leisure='park' THEN 'grass'
          WHEN "natural"='wetland' OR wetland IN ('bog', 'swamp', 'wet_meadow', 'marsh', 'reedbed', 'saltern', 'tidalflat', 'saltmarsh', 'mangrove') THEN 'wetland'
+         WHEN "natural" IN ('rock', 'scree', 'stone') THEN 'rock'
         ELSE NULL
     END;
 $$ LANGUAGE SQL IMMUTABLE;

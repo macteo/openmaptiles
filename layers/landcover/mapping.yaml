@@ -81,6 +81,21 @@ tables:
       - wood
       - wetland
       - grassland
+      - tree
+      - tree_row
+      - scrub
+      - heath
+      - fell
+      - shingle
+      - sand
+      - mud
+      - beach
+      - rock
+      - stone
+      - glacier
+      - cliff
+      - bare_rock
+      - scree
       leisure:
       - park
       wetland:
