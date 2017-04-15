@@ -1,5 +1,6 @@
 tileset:
   layers:
+    - layers/aerialway/aerialway.yaml
     - layers/water/water.yaml
     - layers/waterway/waterway.yaml
     - layers/landcover/landcover.yaml

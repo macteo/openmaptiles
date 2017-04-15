@@ -1,0 +1,32 @@
+layer:
+  id: "aerialway"
+  description: |
+      Aerialway lines and points based of OpenStreetMap [aeroways](http://wiki.openstreetmap.org/wiki/Aeroways).
+      Used for various forms of transport for passengers and goods that use wires, including cable-cars, chair-lifts and drag-lifts.
+  buffer_size: 4
+  fields:
+    # TODO: replace with the correct fields
+    class:
+      description: |
+          The original value of the [`aerialway`](http://wiki.openstreetmap.org/wiki/Key:aerialway) tag.
+      values:
+      - cable_car
+      - gondola
+      - chair_lift
+      - mixed_lift
+      - drag_lift
+      - t-bar
+      - j-bar
+      - platter
+      - rope_tow
+      - magic_carpet
+      - zip_line
+      - canopy
+      - goods
+  datasource:
+    geometry_field: geometry
+    # TODO: replace with the correct layer selection
+    query: (SELECT geometry, class FROM layer_aeroway(!bbox!, z(!scale_denominator!))) AS t
+datasources:
+  - type: imposm3
+    mapping_file: ./mapping.yaml

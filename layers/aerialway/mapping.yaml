@@ -1,0 +1,73 @@
+tables:
+  # etldoc: imposm3 -> osm_aerialway_linestring
+  aerialway_linestring:
+    type: linestring
+    fields:
+    - name: osm_id
+      type: id
+    - name: name
+      key: name
+      type: string
+    - name: geometry
+      type: geometry
+    - name: aerialway
+      key: aerialway
+      type: string
+    - name: occupancy
+      key: aerialway:occupancy
+      type: integer
+    - name: heating
+      key: aerialway:heating
+      type: bool
+    - name: bubble
+      key: aerialway:bubble
+      type: bool
+    - name: bicycle
+      key: aerialway:bicycle
+      type: string
+    - name: duration
+      key: aerialway:duration
+      type: integer
+    - name: capacity
+      key: aerialway:capacity
+      type: integer
+    mapping:
+      aerialway:
+      - cable_car
+      - gondola
+      - chair_lift
+      - mixed_lift
+      - drag_lift
+      - t-bar
+      - j-bar
+      - platter
+      - rope_tow
+      - magic_carpet
+      - zip_line
+      - canopy
+      - goods
+
+  # etldoc: imposm3 -> osm_aerialway_point
+  aerialway_point:
+    type: point
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: name
+      key: name
+      type: string
+    - name: aerialway
+      key: aerialway
+      type: string
+    - name: access
+      key: aerialway:access
+      type: string
+    - name: summer_access
+      key: aerialway:summer:access
+      type: string
+    mapping:
+      aerialway:
+      - pylon
+      - station
