@@ -95,6 +95,9 @@ tables:
     - name: sac_scale
       type: string
       key: sac_scale
+    - name: via_ferrata_scale
+      type: string
+      key: via_ferrata_scale
     - name: geometry
       type: geometry
     - name: highway
@@ -175,6 +178,7 @@ tables:
       - corridor
       - pedestrian
       - steps
+      - via_ferrata
 
 # etldoc: imposm3 -> osm_railway_linestring
   railway_linestring:
