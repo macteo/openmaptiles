@@ -95,6 +95,9 @@ tables:
     - name: sac_scale
       type: string
       key: sac_scale
+    - name: via_ferrata
+      type: bool
+      key: via_ferrata
     - name: via_ferrata_scale
       type: string
       key: via_ferrata_scale
