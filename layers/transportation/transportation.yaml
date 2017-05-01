@@ -68,13 +68,29 @@ layer:
       - hiking
       - mountain_hiking
       - demanding_mountain_hiking
+      - difficult_mountain_hiking
       - alpine_hiking
       - demanding_alpine_hiking
       - difficult_alpine_hiking
+    via_ferrata:
+      description: |
+        Proposed value of the [`via_ferrata`](http://wiki.openstreetmap.org/wiki/Proposed_features/via_ferrata) tag.
+      values: [0, 1]
+    via_ferrata_scale:
+      description: |
+        Original value of the [`via_ferrata_scale`](http://wiki.openstreetmap.org/wiki/Proposed_features/via_ferrata) tag.
+      values:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
   datasource:
     geometry_field: geometry
     srid: 900913
-    query: (SELECT osm_id, geometry, class, oneway, ramp, brunnel, service, sac_scale FROM layer_transportation(!bbox!, z(!scale_denominator!))) AS t
+    query: (SELECT osm_id, geometry, class, oneway, ramp, brunnel, service, sac_scale, via_ferrata, via_ferrata_scale FROM layer_transportation(!bbox!, z(!scale_denominator!))) AS t
 schema:
   - ./class.sql
   - ./merge_highways.sql

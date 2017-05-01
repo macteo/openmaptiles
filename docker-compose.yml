@@ -44,7 +44,7 @@ services:
     networks:
     - postgres_conn
   import-contour:
-    image: "dolomate/import-contour:0.10"
+    image: "dolomate/import-contour:latest"
     env_file: .env
     networks:
     - postgres_conn

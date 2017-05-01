@@ -4,7 +4,7 @@ docker run --rm -v $(pwd):/tileset openmaptiles/openmaptiles-tools make clean
 docker run --rm -v $(pwd):/tileset openmaptiles/openmaptiles-tools make
 
 docker-compose run import-water
-docker-compose run import-natural-earth
+docker-compose run import-natural-earth 
 docker-compose run import-lakelines
 docker-compose run import-osmborder
 
