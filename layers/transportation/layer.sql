@@ -113,14 +113,7 @@ RETURNS TABLE(osm_id bigint, geometry geometry, class text, ramp int, oneway int
             service_value(service) AS service,
             is_bridge, is_tunnel, is_ford, is_ramp, is_oneway, sac_scale, via_ferrata, via_ferrata_scale, z_order
         FROM osm_highway_linestring
-        WHERE NOT is_area AND (
-            zoom_level = 12 AND (
-                highway_class(highway) NOT IN ('track', 'path', 'minor')
-                OR highway IN ('unclassified', 'residential')
-            )
-            OR zoom_level = 13 AND highway_class(highway) NOT IN ('track', 'path')
-            OR zoom_level >= 14
-        )
+        WHERE NOT is_area AND zoom_level >= 12
         UNION ALL
 
         -- etldoc: osm_railway_linestring_gen2  ->  layer_transportation:z11
