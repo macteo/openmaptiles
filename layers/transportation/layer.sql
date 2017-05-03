@@ -90,19 +90,7 @@ RETURNS TABLE(osm_id bigint, geometry geometry, class text, ramp int, oneway int
             NULL AS sac_scale, NULL::boolean AS via_ferrata, NULL AS via_ferrata_scale,
             z_order
         FROM osm_highway_linestring_gen2
-        WHERE zoom_level BETWEEN 9 AND 10
-        UNION ALL
-
-        -- etldoc: osm_highway_linestring_gen1  ->  layer_transportation:z11
-        SELECT
-            osm_id, geometry, highway, NULL AS railway, NULL AS service,
-            NULL::boolean AS is_bridge, NULL::boolean AS is_tunnel,
-            NULL::boolean AS is_ford,
-            NULL::boolean AS is_ramp, NULL::boolean AS is_oneway,
-            NULL AS sac_scale, NULL::boolean AS via_ferrata, NULL AS via_ferrata_scale,
-            z_order
-        FROM osm_highway_linestring_gen1
-        WHERE zoom_level = 11
+        WHERE zoom_level = 9
         UNION ALL
 
         -- etldoc: osm_highway_linestring       ->  layer_transportation:z12
@@ -113,7 +101,7 @@ RETURNS TABLE(osm_id bigint, geometry geometry, class text, ramp int, oneway int
             service_value(service) AS service,
             is_bridge, is_tunnel, is_ford, is_ramp, is_oneway, sac_scale, via_ferrata, via_ferrata_scale, z_order
         FROM osm_highway_linestring
-        WHERE NOT is_area AND zoom_level >= 12
+        WHERE NOT is_area AND zoom_level >= 10
         UNION ALL
 
         -- etldoc: osm_railway_linestring_gen2  ->  layer_transportation:z11
