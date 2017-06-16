@@ -16,6 +16,6 @@ docker-compose run import-sql
 docker-compose run generate-vectortiles
 
 docker-compose run --rm openmaptiles-tools  generate-metadata ./data/tiles.mbtiles
-docker-compose run --rm openmaptiles-tools  chmod 666         ./data/tiles.mbtiles	
+docker-compose run --rm openmaptiles-tools  chmod 666         ./data/tiles.mbtiles
 
 make start-tileserver
